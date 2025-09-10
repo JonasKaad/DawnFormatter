@@ -56,7 +56,8 @@
   "modal.editPlayer.title": "Rediger spiller",
   "modal.newPlayer.title": "Tilføj ny spiller",
   "modal.newPlayer.name.label": "Navn",
-  "modal.newPlayer.discord.label": "Discord navn (valgfrit)",
+  "modal.newPlayer.discord.label": "Discord Navn (valgfrit)",
+  "modal.newPlayer.discordId.label": "Discord ID (valgfrit)",
   "modal.edit.team.title": "Rediger team",
   "modal.add.team.title": "Tilføj nyt team",
   "modal.team.name.label": "Team navn",
@@ -148,5 +149,6 @@
   "spec.protectionWarrior": "Protection",
   "trade.all.armor": "Handel alle",
   "trade.all.armor.except": "Handel alle undtagen: ",
-  "no.players.active": "Ingen aktive karakterer"
+  "no.players.active": "Ingen aktive karakterer",
+  "discord.format.toggle.label": "Brug Discord ID i stedet for navn"
 }
