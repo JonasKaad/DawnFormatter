@@ -232,7 +232,7 @@ export default function App() {
               }}
             />
           ))}
-          {players.length < 4 && <AddNewPlayerCard onClick={() => setShowModal(true)} />}
+          {players.length < 7 && <AddNewPlayerCard onClick={() => setShowModal(true)} />}
 
           <EditPlayerModal
             open={showModal}
