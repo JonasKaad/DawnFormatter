@@ -22,7 +22,8 @@ export class DiscordFormatService {
     players: Player[],
     classTranslations: Record<Class, string>,
     armorSlotTranslations: Record<ArmorSlot, string>,
-    translateFn: (key: string) => string
+    translateFn: (key: string) => string,
+    useDiscordId: boolean = false
   ): string {
     const activePlayers = players.filter((p) => p.characters.filter((c) => c.active).length > 0)
     if (activePlayers.length < 1) {
@@ -38,6 +39,7 @@ export class DiscordFormatService {
           classTranslations,
           armorSlotTranslations,
           translateFn,
+          useDiscordId,
           activePlayers.length === 1 ? undefined : idx + 1
         )
       )
@@ -51,6 +53,7 @@ export class DiscordFormatService {
     classTranslations: Record<Class, string>,
     armorSlotTranslations: Record<ArmorSlot, string>,
     translateFn: (key: string) => string,
+    useDiscordId: boolean = false,
     number?: number
   ): string {
     if (player.characters.length < 1) {
@@ -62,7 +65,16 @@ export class DiscordFormatService {
     )
 
     const playerInfo = number ? `Player${number} ` : ''
-    const playerDiscord = player.discord !== undefined ? `@${player.discord} ` : ''
+
+
+    let playerDiscord = player.discord !== undefined ? `@${player.discord} ` : `<@${player.discordId}>`
+
+    if (useDiscordId && player.discordId) {
+      playerDiscord = `<@${player.discordId}> `
+    } else if (player.discord) {
+      playerDiscord = `@${player.discord} `
+    } 
+
     const header = `${playerInfo}${playerDiscord}:Raiderio: ${highestScore}`
     const characterLines = player.characters
       .filter((c) => c.active)
