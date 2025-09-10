@@ -7,6 +7,7 @@ import { LANGUAGE } from '../../data/StorageKeys'
 export const languages: Language[] = [
   { code: 'en', name: 'English', flag: 'https://flagcdn.com/gb.svg' },
   { code: 'de', name: 'Deutsch', flag: 'https://flagcdn.com/de.svg' },
+  { code: 'da', name: 'Dansk', flag: 'https://flagcdn.com/dk.svg' },
 ]
 
 export type Language = {
