@@ -74,6 +74,9 @@ export class DiscordFormatService {
     } else if (player.discord) {
       playerDiscord = `@${player.discord} `
     } 
+    if(!player.discord && !player.discordId) {
+      playerDiscord = ''
+    }
 
     const header = `${playerInfo}${playerDiscord}:Raiderio: ${highestScore}`
     const characterLines = player.characters
