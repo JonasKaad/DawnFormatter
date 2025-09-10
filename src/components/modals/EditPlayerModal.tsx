@@ -11,7 +11,8 @@ interface NewPlayerModalProps {
   mode: 'create' | 'edit'
   initialName?: string
   initialDiscord?: string
-  onSave: (data: { name: string; discord?: string }) => void
+  initialDiscordId?: string
+  onSave: (data: { name: string; discord?: string; discordId?: string }) => void
 }
 
 export const EditPlayerModal = ({
@@ -21,21 +22,25 @@ export const EditPlayerModal = ({
   mode = 'edit',
   initialName,
   initialDiscord,
+  initialDiscordId,
 }: NewPlayerModalProps) => {
   const { t } = useTranslation()
   const [name, setName] = useState(initialName ?? '')
   const [discord, setDiscord] = useState(initialDiscord ?? '')
+  const [discordId, setDiscordId] = useState(initialDiscordId ?? '')
 
   useEffect(() => {
     if (open) {
       setName(initialName ?? '')
       setDiscord(initialDiscord ?? '')
+      setDiscordId(initialDiscordId ?? '')
     }
-  }, [open, initialName, initialDiscord])
+  }, [open, initialName, initialDiscord, initialDiscordId])
 
   const resetData = () => {
     setName(initialName ?? '')
     setDiscord(initialDiscord ?? '')
+    setDiscordId(initialDiscordId ?? '')
   }
 
   const handleClose = () => {
@@ -44,7 +49,7 @@ export const EditPlayerModal = ({
   }
 
   const handleSave = () => {
-    onSave({ name, discord: discord || undefined })
+    onSave({ name, discord: discord || undefined, discordId: discordId || undefined })
     handleClose()
   }
 
@@ -78,6 +83,12 @@ export const EditPlayerModal = ({
             label={t('modal.newPlayer.discord.label')}
             value={discord}
             onChange={(e) => setDiscord(e.target.value)}
+          />
+          <FloatingInput
+            id="player-discord-id"
+            label={t('modal.newPlayer.discordId.label')}
+            value={discordId}
+            onChange={(e) => setDiscordId(e.target.value)}
           />
 
           <div className="flex justify-end gap-3 pt-4">

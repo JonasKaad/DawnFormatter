@@ -1,4 +1,4 @@
-import { CURRENT_TEAM, TEAMS } from '../data/StorageKeys'
+import { CURRENT_TEAM, TEAMS, USE_DISCORD_ID } from '../data/StorageKeys'
 import { Teams } from '../data/Teams'
 
 export interface StoredTeamsData {
@@ -54,5 +54,14 @@ export class DataStorageService {
 
   static saveCurrentTeamKey(currentTeamKey: string): void {
     localStorage.setItem(CURRENT_TEAM, currentTeamKey)
+  }
+
+  static saveUseDiscordId(useDiscordId: boolean): void {
+    localStorage.setItem(USE_DISCORD_ID, String(useDiscordId))
+  }
+
+  static loadUseDiscordIdFromLocalStorage(): boolean {
+    const savedValue = localStorage.getItem(USE_DISCORD_ID)
+    return savedValue === 'true'
   }
 }

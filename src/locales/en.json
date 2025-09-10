@@ -57,6 +57,7 @@
   "modal.newPlayer.title": "Add new player",
   "modal.newPlayer.name.label": "Name",
   "modal.newPlayer.discord.label": "Discord name (optional)",
+  "modal.newPlayer.discordId.label": "Discord ID (optional)",
   "modal.edit.team.title": "Edit team",
   "modal.add.team.title": "Add new team",
   "modal.team.name.label": "Team name",
@@ -148,5 +149,6 @@
   "spec.protectionWarrior": "Protection",
   "trade.all.armor": "Trade all",
   "trade.all.armor.except": "Trade all except: ",
-  "no.players.active": "No active characters"
+  "no.players.active": "No active characters",
+  "discord.format.toggle.label": "Use Discord ID instead of name"
 }
