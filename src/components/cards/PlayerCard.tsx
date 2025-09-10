@@ -83,10 +83,12 @@ export const PlayerCard = ({ player, onUpdatePlayer, onDeletePlayer }: PlayerCar
             mode={'edit'}
             initialName={player.name}
             initialDiscord={player.discord}
+            initialDiscordId={player.discordId}
             onClose={() => setEditPlayerModalOpen(false)}
-            onSave={({ name, discord }) => {
+            onSave={({ name, discord, discordId }) => {
               player.name = name
               player.discord = discord
+              player.discordId = discordId
               onUpdatePlayer()
             }}
           />
