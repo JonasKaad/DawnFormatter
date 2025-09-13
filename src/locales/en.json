@@ -150,5 +150,7 @@
   "trade.all.armor": "Trade all",
   "trade.all.armor.except": "Trade all except: ",
   "no.players.active": "No active characters",
-  "discord.format.toggle.label": "Use Discord ID instead of name"
+  "discord.format.toggle.label": "Use Discord ID instead of name",
+  "notes.title": "Notes",
+  "notes.placeholder": "Add your personal notes here. They will be saved automatically."
 }

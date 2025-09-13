@@ -150,5 +150,7 @@
   "trade.all.armor": "Handel alle",
   "trade.all.armor.except": "Handel alle undtagen: ",
   "no.players.active": "Ingen aktive karakterer",
-  "discord.format.toggle.label": "Brug Discord ID i stedet for navn"
+  "discord.format.toggle.label": "Brug Discord ID i stedet for navn",
+  "notes.title": "Noter",
+  "notes.placeholder": "Tilføj dine personlige noter her. De gemmes automatisk."
 }
