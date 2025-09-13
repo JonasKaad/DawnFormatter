@@ -20,6 +20,7 @@ import i18nOutput from './i18nOutput'
 import { Player } from './models/Player'
 import { DataStorageService } from './services/DataStorageService'
 import { DiscordFormatService } from './services/DiscordFormatService'
+import { UserNotes } from './components/UserNotes'
 
 export default function App() {
   // const test: Player[] = [
@@ -305,6 +306,9 @@ export default function App() {
         </div>
 
         <MarkdownOutput value={output} />
+      </div>
+      <div className={'flex flex-col gap-8'}>
+        <UserNotes className="mt-4" />
       </div>
       <Footer />
     </div>
